@@ -5,7 +5,7 @@ var url_control_enc = require(__dirname + '/../controllers/url_control_enc');
 
 var routes = function(app) {
 	// this is for legact rest apis for android
-	app.post('/zoco/client/login',url_control.login);
+	app.post('/zoco/client/register',url_control.register);
 	app.post('/zoco/client/register_book',url_control.register_book);
 	app.post('/zoco/client/post_test', url_control.post_test);
 	app.get('/zoco/client/get_test',url_control.get_test);

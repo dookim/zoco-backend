@@ -30,15 +30,9 @@ exports.get_test = function(req,res) {
    res.send("hello");
 }
 
-exports.login = function(req, res) {
-    var data = { 'tag':'login','data': req.body};
-    
-    //# set queue name for worker and queue
-    /*
-    var client_type = req.query.client_type;
-    var queueName = queueName;
-    if(client_type) queueName = client_type;
-    */
+exports.register = function(req, res) {
+    var data = { 'tag':'register','data': req.body};
+    console.log(data);    
     gk.async.sequence([  //async.waterfall
         function (cb) {
             var ret = mq_pubhandler.publish(queueName, data);
